@@ -1,9 +1,12 @@
 package PageObject;
 
 import Methods.BaseClass;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.asserts.Assertion;
 
@@ -77,6 +80,17 @@ public class Elements  extends BaseClass {
     }
     @FindBy(xpath ="//select[@name='RoleId']")
     WebElement DropDownRole;
+
+    public void dropDown(){
+        try{
+            //Select s = new Select(DropDownRole);
+           // s.selectByIndex(1);
+           selectbyIndex(DropDownRole,1);
+        }catch(Exception e){
+
+        }
+    }
+
     @FindBy(xpath ="//input[@name='Email']")
     WebElement EnterEmail;
     public void EnterEmail(String Name){
@@ -97,8 +111,10 @@ public class Elements  extends BaseClass {
     }
     @FindBy(xpath ="//button[contains(text(),'Save')]")
     WebElement SaveUserButton;
+
     public void SaveUserButton(){
         try{
+            Thread.sleep(1000);
             click(SaveUserButton);
         }catch (Exception e){
 
@@ -110,6 +126,15 @@ public class Elements  extends BaseClass {
         String Tittle = "Protractor practice website - WebTables";
         if(Tittle.equals(driver.getTitle())){
             Assert.assertEquals(Tittle,driver.getTitle());
+        }
+    }
+    @FindBy(xpath ="//button[contains(text(),'Save')]")
+    WebElement validatename;
+    public  void ValidateAddUser() {
+        if (validatename.getText().equalsIgnoreCase("muzwali")) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", validatename);
+        } else {
+            System.out.println("not validated");
         }
     }
 }

@@ -1,5 +1,5 @@
 package TestingPage;
-
+ /*
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +16,7 @@ public class Testing {
     public void SetUp(){
         WebDriverManager.chromedriver().setup();
         driver= new ChromeDriver();
+        driver.manage().window().maximize();
     }
     @Test
    public void TestWeb(){
@@ -84,7 +85,7 @@ public class Testing {
         CheckOutDate.clear();
         CheckOutDate.sendKeys("16/05/2024");
 
-      /*
+
         User name: trevormccarthy
         Password: O2BH0K
 
@@ -96,6 +97,7 @@ public class Testing {
 
         Please use any report of your choice and ensure the response is captured as evidence
 
-       */
+
    }
 }
+*/

@@ -11,6 +11,7 @@
      And User Enter a UserName "<UserName>"
      And User Enter a Password "<Password>"
      And User Click on Customer Radio Button
+     And User Click on drop down for role
      And User Enter a Email "<Email>"
      And User Enter a CellPhone "<CellPhone>"
      Then User Click on Save

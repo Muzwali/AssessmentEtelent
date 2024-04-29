@@ -17,7 +17,9 @@ public class MyStepdefs extends Elements {
     public void userOpensTheWebSite() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+
         driver.get("https://way2automation.com/angularjs-protractor/webtables/");
+        driver.manage().window().maximize();
     }
 
     @And("Verify the website")
@@ -67,12 +69,18 @@ public class MyStepdefs extends Elements {
 
     @Then("User Click on Save")
     public void userClickOnSave() {
+
         SaveUserButton();
     }
 
     @Given("Validated added User")
     public void validatedAddedUser() {
+        ValidateAddUser();
     }
 
 
+    @And("User Click on drop down for role")
+    public void userClickOnDropDownForRole() {
+        dropDown();
+    }
 }

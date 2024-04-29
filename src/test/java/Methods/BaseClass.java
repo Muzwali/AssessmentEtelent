@@ -20,6 +20,7 @@ public class BaseClass {
         try{
             WebDriverWait wait = new WebDriverWait(driver,20);
             wait.until(ExpectedConditions.elementToBeClickable(element));
+            Thread.sleep(1000);
             element.click();
         }catch (Exception e){
         }
@@ -28,6 +29,7 @@ public class BaseClass {
         try{
             WebDriverWait wait = new WebDriverWait(driver,20);
             wait.until(ExpectedConditions.visibilityOfAllElements(element));
+            Thread.sleep(1000);
             element.sendKeys(Input);
         }catch (Exception e){
         }
@@ -36,6 +38,7 @@ public class BaseClass {
         try{
             WebDriverWait wait = new WebDriverWait(driver,20);
             wait.until(ExpectedConditions.elementToBeClickable(element));
+            Thread.sleep(1000);
             final Select select = new Select(element);
             select.selectByIndex(Input);
         }catch (Exception e){
